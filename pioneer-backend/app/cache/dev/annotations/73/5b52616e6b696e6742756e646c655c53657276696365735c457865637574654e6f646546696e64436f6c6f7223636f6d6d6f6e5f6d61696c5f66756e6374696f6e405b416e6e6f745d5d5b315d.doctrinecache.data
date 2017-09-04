@@ -1,0 +1,2 @@
+0
+a:1:{i:0;O:41:"Mmoreram\GearmanBundle\Driver\Gearman\Job":8:{s:4:"name";s:19:"common_mailfunction";s:11:"description";N;s:10:"iterations";i:1;s:7:"servers";N;s:13:"defaultMethod";N;s:7:"timeout";N;s:20:"minimumExecutionTime";N;s:5:"value";N;}}

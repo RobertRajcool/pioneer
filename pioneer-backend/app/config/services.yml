@@ -1,0 +1,26 @@
+services:
+    acme_api.event.jwt_response_listener:
+           class: UserBundle\EventListener\AuthenticationSuccessListener
+           tags:
+               - { name: kernel.event_listener, event: lexik_jwt_authentication.on_authentication_success, method: onAuthenticationSuccessResponse }
+    acme_api.event.authentication_failure_listener:
+            class: UserBundle\EventListener\AuthenticationSuccessListener
+            tags:
+                - { name: kernel.event_listener, event: lexik_jwt_authentication.on_authentication_failure, method: onAuthenticationFailureResponse }
+    acme_api.event.jwt_invalid_listener:
+            class: UserBundle\EventListener\AuthenticationSuccessListener
+            tags:
+                - { name: kernel.event_listener, event: lexik_jwt_authentication.on_jwt_not_found, method: onJWTNotFound }
+    app.jwt_token_authenticator:
+        parent: lexik_jwt_authentication.security.guard.jwt_token_authenticator
+        class: UserBundle\EventListener\JWTAuthenticator
+    log.update.listener:
+               class: UserBundle\EventListener\LogDetailsListeners
+               arguments: ["@service_container", "@session", "%database_host%", "%database_user%", "%database_password%","%database_name%"]
+               tags:
+                         - { name: doctrine.event_listener, event: preUpdate, method: preUpdate }
+    fos_user.doctrine_registry:
+                   alias: doctrine
+    executenodefindcolor.worker:
+              class: RankingBundle\Services\ExecuteNodeFindColor
+              arguments: ["@doctrine","@service_container"]

@@ -1,0 +1,8 @@
+{
+  "globalDependencies": {
+    "core-js": "registry:dt/core-js#0.0.0+20160725163759",
+    "jasmine": "registry:dt/jasmine#2.2.0+20160621224255",
+    "jspdf": "registry:dt/jspdf#1.1.135+20160921164505",
+    "node": "registry:dt/node#6.0.0+20160909174046"
+  }
+}

@@ -1,0 +1,7 @@
+Tests/Functional/cache
+Tests/Functional/logs
+composer.lock
+composer.phar
+phpcs.log
+vendor
+phpunit.xml

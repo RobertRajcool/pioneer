@@ -1,0 +1,25 @@
+ranking:
+    resource: "@RankingBundle/Controller/"
+    type:     annotation
+    prefix:   /api/ranking
+
+vessel:
+    resource: "@VesselBundle/Controller/"
+    type:     annotation
+    prefix:   /api/vesselbunlde
+    defaults:
+        _format: json
+
+companyuser:
+    resource: "@DashboardBundle/Controller/"
+    type:     annotation
+    prefix:   /api
+user:
+    resource: "@UserBundle/Controller/"
+    type:     annotation
+    prefix:   /
+fos_js_routing:
+    resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+    prefix:   /userbundle

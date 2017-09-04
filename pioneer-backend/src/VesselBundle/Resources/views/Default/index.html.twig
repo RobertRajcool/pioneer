@@ -1,0 +1,59 @@
+<html>
+<body>
+<div class="certificate-wrapper">
+    <div class="row-fluid">
+        <div class="certificates_header clearfix">
+            <div class="brand-title">
+                <div class="title">OffHire-Reports</div>
+            </div>
+        </div>
+<section class="data-row-section top-margin-space">
+    <table class="responsive-table certificates-table kpi_name_weightage_row">
+        <thead>
+        <tr>
+            <th>Vessel Name</th>
+            <th>No: of incidents</th>
+            <th>Off hire days</th>
+            <th>Cost</th>
+
+        </tr>
+        </thead>
+        <tbody>
+
+        {% for  graphDataObject in graphDataDetails %}
+            <tr>
+            <td>{{ graphDataObject.shipName}}</td>
+                <td> {{graphDataObject.numberofincidents}}</td>
+                <td> {{graphDataObject.totaloffhiredays}}</td>
+                <td> ${{graphDataObject.totalcost}}</td>
+                </tr>
+        {% endfor %}
+        <tr>
+            <td>Total</td>
+            <td> {{totalincidnets}}</td>
+            <td>  {{totaloffhiredays}}</td>
+            <td>${{totalcost}}</td>
+        </tr>
+
+        </tbody>
+        </table>
+    </section>
+        <section class="data-row-section top-margin-space">
+            <table class="responsive-table certificates-table">
+                <thead>
+                <tr>
+                    <th class="branding-colours thead-title-two-row no-td-right-border"></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><img src="/phantomjs/listofgraph/{{ imageSource }}" alt="Loader Image"/></td>
+                </tr>
+                </tbody>
+            </table>
+        </section>
+        </div>
+    </div>
+</body>
+</html>
+

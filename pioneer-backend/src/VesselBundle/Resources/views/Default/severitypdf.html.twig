@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Shipping</title>
+    <!-- Bootstrap -->
+
+
+    <link rel="stylesheet" href="{{ asset('customcss/bootstrap.min.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('customcss/pdf.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('customcss/app.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('customcss/ss-standard.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('customcss/font-awesome.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('customcss/font-awesome.min.css') }}"/>
+
+
+
+
+    {# <link href="customcss/ss-standard.css" rel="stylesheet">
+     <link href="customcss/font-awesome.css" rel="stylesheet">
+     <link href="customcss/font-awesome.min.css" rel="stylesheet">#}
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="customjs/jquery.min.js"></script>
+    <script src="customjs/angular.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="customjs/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+<div class="certificate-wrapper">
+    <div class="row-fluid">
+        <div class="certificates_header clearfix">
+            <div class="brand-title">
+                <div class="title" style="color:red ">Severity wise Reports</div>
+            </div>
+        </div>
+        <section class="data-row-section top-margin-space">
+            <table class="responsive-table certificates-table kpi_name_weightage_row">
+                <thead>
+                <tr>
+                    <th >Vessels</th>
+                    <th class="rotate"><div><span>No.of Incidents</span></div></th>
+                    <th class="rotate"><div><span>Total closed</span></div></th>
+                    <th class="rotate"><div><span>Total Pending</span></div></th>
+                    <th class="rotate"><div><span> {% for typeofcauseDatails in typeofCauseList %}
+                                    {{typeofcauseDatails.causeName}}
+                                {% endfor %}</span></div>
+                    </th>
+
+                </tr>
+                </thead>
+                <tbody>
+                {#{% set j=0 %}
+                {% for incidentstatusData  in shipDetails %}
+                    <tr>
+                        <td>{{incidentstatusData[0]['shipName']}}</td>
+                        <td>{{incidentCount[j][0]['incidentCount']}}</td>
+                        <td>{{incidentClosed[j][0]['incidentClosed']}}</td>
+                        <td>{{incidentOpened[j][0]['incidentOpened']}}</td>
+                    </tr>
+                    {% set j=j+1 %}
+                {% endfor %}#}
+
+                </tbody>
+            </table>
+        </section>
+        <section class="data-row-section top-margin-space">
+            <table class="responsive-table certificates-table">
+                <thead>
+                <tr>
+                    <th class="branding-colours thead-title-two-row no-td-right-border"></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><img src="/phantomjs/listofgraph/{{ imageSource }}" alt="Loader Image"/></td>
+                </tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
+</div>
+</body>
+</html>
+

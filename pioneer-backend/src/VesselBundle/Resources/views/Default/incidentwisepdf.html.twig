@@ -1,0 +1,54 @@
+<html>
+<body>
+<div class="certificate-wrapper">
+    <div class="row-fluid">
+        <div class="certificates_header clearfix">
+            <div class="brand-title">
+                <div class="title">incident wise Reports</div>
+            </div>
+        </div>
+        <section class="data-row-section top-margin-space">
+            <table class="responsive-table certificates-table kpi_name_weightage_row">
+                <thead>
+                <tr>
+                    <th>Incident Name</th>
+                    <th>year</th>
+                    <th>Total</th>
+
+
+                </tr>
+                </thead>
+                <tbody>
+                {% set j=0 %}
+                {% for incidentwisestatusData  in incidentName %}
+                    <tr>
+                        <td>{{incidentwisestatusData[0]['incidentName']}}</td>
+                        <td>{{currentYear}}</td>
+                        <td>{{incidentvalues[j]}}</td>
+
+                    </tr>
+                    {% set j=j+1 %}
+                {% endfor %}
+
+                </tbody>
+            </table>
+        </section>
+        <section class="data-row-section top-margin-space">
+            <table class="responsive-table certificates-table">
+                <thead>
+                <tr>
+                    <th class="branding-colours thead-title-two-row no-td-right-border"></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><img src="/phantomjs/listofgraph/{{ imageSource }}" alt="Loader Image"/></td>
+                </tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
+</div>
+</body>
+</html>
+
